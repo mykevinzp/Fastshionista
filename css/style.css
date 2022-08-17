@@ -87,11 +87,9 @@ img {
   z-index: 999999;
   transform: rotate(225deg);
   cursor: pointer;
+
 }
 
-.toggle-menu {
-  display: none;
-}
 
 header {
   position: sticky;
@@ -99,6 +97,7 @@ header {
   left: 0;
   z-index: 99;
   margin: 2rem 0;
+  transition: 5000ms ease-in;
 }
 
 header ul {
@@ -120,6 +119,46 @@ header ul li a:hover {
   background-color: antiquewhite;
   text-transform: capitalize;
   transition: 2s ease-in-out 0.1s;
+}
+
+footer {
+  width: 70vw;
+  background-color: #000f42;
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  opacity: 0;
+  transition: 5000ms ease-in;
+  pointer-events: none;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: 5000ms ease-in;
+}
+
+.footer ol {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer a {
+  color: #916356;
+  font-weight: 600;
+  padding: 0.5rem;
+  text-shadow: 1px 1px 4px #916356;
+}
+
+.footer ol a:hover {
+  background-color: antiquewhite;
+  text-transform: capitalize;
+  transition: 2s ease-in-out 0.1s;
+  text-decoration: overline;
 }
 
 
@@ -165,9 +204,15 @@ header ul li a:hover {
 }
 
 .nav-scrolled {
-  background: rgb(0, 15, 66);
+  transform: translateY(-100%);
   transition: 5000ms ease-in;
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+}
+
+.foot-scrolled {
+  bottom: 0;
+  opacity: 1;
+  transition: 1500ms ease-in;
+  pointer-events: all;
 }
 
 /* conatct */
@@ -309,39 +354,18 @@ form button {
     height: 1vh;
   }
 
-  .menu-open {
-    display: block;
-  }
-
-  .hide {
-    display: none;
-  }
-
-  .toggle-menu {
-    display: block;
-    pointer-events: none;
-  }
-
-
-  header {
-    border: none;
-    margin-bottom: 0;
-  }
-
   header ul {
     width: 40vw;
     flex-direction: column;
     gap: 0;
     background: rgb(0, 15, 66);
     transition: linear;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
   }
 
-  .nav-scrolled {
-    background-color: transparent;
-    box-shadow: none;
+  header ul li {
+    width: 100%;
+    display: block;
   }
-
 
   header ul li a:hover {
     transition: ease-in-out 0.1s;
@@ -375,6 +399,19 @@ form button {
     margin: 1rem auto 0;
   }
 
+  .footer {
+    gap: .69rem;
+    font-size: 0.87rem;
+  }
+
+  .footer ol {
+    gap: .39rem;
+  }
+
+  .footer a {
+    padding: 0.49rem;
+  }
+
 }
 
 @media screen and (max-width: 360px) {
@@ -399,9 +436,18 @@ form button {
     font-size: .69rem;
   }
 
-    .text p {
+  .text p {
     padding: 0 .8rem;
     margin: 0 .8rem;
-    }
+  }
+
+  .footer {
+    font-size: 0.69rem;
+  }
+
+  .footer a {
+    padding: 0.4rem;
+  }
+
 
 }

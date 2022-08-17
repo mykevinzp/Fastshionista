@@ -1,5 +1,6 @@
 const header = document.querySelector("header");
 const sectionOne = document.querySelector(".about");
+const footer = document.querySelector("#footer");
 
 const faders = document.querySelectorAll('.fade-in');
 const sliders = document.querySelectorAll('.slide-in');
@@ -18,8 +19,10 @@ const sectionOneObserver = new IntersectionObserver
     entries.forEach(entry => {
         if(!entry.isIntersecting) {
             header.classList.add('nav-scrolled');
+            footer.classList.add('foot-scrolled')
         }else{
             header.classList.remove('nav-scrolled');
+            footer.classList.remove('foot-scrolled')
         }
     });
 }, sectionOneOptions);
