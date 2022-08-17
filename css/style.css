@@ -357,7 +357,7 @@ form button {
   }
 
   header ul {
-    width: 40vw;
+    width: 15vw;
     flex-direction: column;
     gap: 0;
     background: rgb(0, 15, 66);
@@ -414,6 +414,10 @@ form button {
     padding: 0.49rem;
   }
 
+  .nav-scrolled {
+    transform: translateX(-100%);
+  }
+
 }
 
 @media screen and (max-width: 360px) {
@@ -448,8 +452,7 @@ form button {
   }
 
   .footer a {
-    padding: 0.4rem;
+    padding: 0.45rem;
   }
-
 
 }
