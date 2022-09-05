@@ -29,7 +29,9 @@ a {
 
 img {
   max-width: 100%;
+  display: block;
   object-fit: contain;
+  overflow: hidden;
   aspect-ratio: 1/1;
 }
 
@@ -122,7 +124,7 @@ header ul li a:hover {
 }
 
 footer {
-  width: 70vw;
+  width: 60vw;
   background-color: #000f42;
   position: fixed;
   left: 0;
@@ -130,6 +132,9 @@ footer {
   opacity: 0;
   transition: 5000ms ease-in;
   pointer-events: none;
+  margin-left: 5%;
+  transform: translate(-5%, 0%);
+  box-shadow: 1px 1px 4px #000f42;
 }
 
 .footer {
@@ -138,6 +143,8 @@ footer {
   align-items: center;
   gap: 1rem;
   transition: 5000ms ease-in;
+  margin: .1rem 0;
+  padding: .125rem;
 }
 
 .footer ol {
@@ -145,6 +152,11 @@ footer {
   gap: 1rem;
   justify-content: space-around;
   align-items: center;
+}
+
+.footer p {
+  margin-bottom: .1rem;
+  text-align: center;
 }
 
 .footer a {
@@ -202,6 +214,88 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+/* gallery */
+#gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .1rem;
+}
+
+#gallery h2 {
+  font-size: 4rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+#gallery img {
+  object-fit: initial;
+  max-width: 100%;
+  height: 100%;
+  align-self: center;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+
+.flex-even {
+  display: flex;
+  gap: .1rem;
+}
+
+
+.flex-item {
+  flex: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .flex-even {
+    flex-wrap: wrap;
+  }
+
+  .flex-item {
+    flex: 1 1 100px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .flex-even {
+    flex-wrap: wrap;
+  }
+
+  .flex-item {
+    flex: 1 1 80px;
+  }
+
+}
+
+.grid-image {
+  display: grid;
+  gap: .1rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .grid-image {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+}
+
+.container-grid {
+  max-width: 100%;
+  display: grid;
+  gap: .1rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin: 0 auto;
+}
+
+/* gallery end */
 
 .nav-scrolled {
   transform: translateY(-100%);
@@ -357,7 +451,7 @@ form button {
   }
 
   header ul {
-    width: 15vw;
+    width: 20vw;
     flex-direction: column;
     gap: 0;
     background: rgb(0, 15, 66);
@@ -374,7 +468,8 @@ form button {
   }
 
   .whitespace h1,
-  #blog h2 {
+  #blog h2,
+  #gallery h2 {
     font-size: 1.7rem;
     text-align: center;
   }
@@ -426,7 +521,9 @@ form button {
   }
 
   .whitespace h1,
-  #blog h2 {
+  #blog h2,
+  #gallery h2,
+  #contact h2 {
     text-align: left;
   }
 
